@@ -1,5 +1,5 @@
 FROM python:3
-WORKDIR /usr/local
+WORKDIRRR /usr/local
 RUN pip install --root-user-action=ignore --upgrade pip && pip install --root-user-action=ignore django mysqlclient && mkdir static
 COPY django_tutorial /usr/local
 COPY docker-entrypoint.sh /usr/local/
