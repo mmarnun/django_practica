@@ -1,6 +1,6 @@
 version: '3.1'
 services:
-  django:
+  django_prac:
     container_name: django_prac
     image: mmarnun/django:v1
     restart: always
@@ -16,8 +16,8 @@ services:
     ports:
       - 8081:8000
     depends_on:
-      - django_bd
-  django_bd:
+      - django_bd_prac
+  django_bd_prac:
     container_name: django_bd_prac
     image: mariadb
     restart: always
