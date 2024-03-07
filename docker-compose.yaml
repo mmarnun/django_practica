@@ -1,0 +1,32 @@
+version: '3.1'
+services:
+  django:
+    container_name: django_prac
+    image: mmarnun/django:v1
+    restart: always
+    environment:
+      ALLOWED_HOSTS: "*"
+      HOST_BD: django_bd_prac
+      USUARIO_BD: django
+      CONTRASENA_BD: django
+      NOMBRE_BD: django
+      DJANGO_SUPERUSER_PASSWORD: admin
+      DJANGO_SUPERUSER_USERNAME: admin
+      DJANGO_SUPERUSER_EMAIL: admin@example.org
+    ports:
+      - 8081:8000
+    depends_on:
+      - django_bd
+  django_bd:
+    container_name: django_bd_prac
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: django
+      MYSQL_USER: django
+      MYSQL_PASSWORD: django
+    volumes:
+      - django_bd:/var/lib/mysql
+volumes:
+    django_bd_prac:
