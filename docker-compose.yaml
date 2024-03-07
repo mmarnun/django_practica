@@ -2,7 +2,7 @@ version: '3.1'
 services:
   django_prac:
     container_name: django_prac
-    image: mmarnun/django:v1
+    image: mmarnun/django:160
     restart: always
     environment:
       ALLOWED_HOSTS: "*"
@@ -14,7 +14,7 @@ services:
       DJANGO_SUPERUSER_USERNAME: admin
       DJANGO_SUPERUSER_EMAIL: admin@example.org
     ports:
-      - 8081:8000
+      - 8082:8000
     depends_on:
       - django_bd_prac
   django_bd_prac:
