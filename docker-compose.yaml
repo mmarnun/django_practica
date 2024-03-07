@@ -27,6 +27,6 @@ services:
       MYSQL_USER: django
       MYSQL_PASSWORD: django
     volumes:
-      - django_bd_prac:/var/lib/mysql
+      - django_bd:/var/lib/mysql
 volumes:
     django_bd_prac:
